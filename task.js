@@ -14,7 +14,20 @@ async function allTask(){
     } catch (error) {
       console.error('Error fetching users:', error);
     }
+  };
 
+  async function taskByDate(date){
+    try {
+        console.log("in all task func");
+      const task = await Task.findAll({where: {
+        startdate: date,
+      },
+      attributes: { exclude: ['id'] }}); // Fetch all users
+      console.log('All task:', task);
+      return task;
+    } catch (error) {
+      console.error('Error fetching users:', error);
+    }
   };
 
   async function saveTask(data){
@@ -28,4 +41,4 @@ async function allTask(){
     }
   }
   
-  module.exports={allTask,saveTask};
+  module.exports={allTask,saveTask,taskByDate};
