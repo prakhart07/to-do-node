@@ -9,6 +9,7 @@ app.use(cors());
     //git branch checking
     console.log("git log");
     console.log("in routes");
+    //direct commit check
     routes.get("/all",async (req,res)=>{
         console.log("Calling taskFunc.allTask...");
       const task= await taskFunc.allTask();
