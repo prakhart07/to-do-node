@@ -8,7 +8,6 @@ app.use(cors());
 
     //git branch checking
     console.log("git log");
-    console.log("git log feature");
     console.log("in routes");
     routes.get("/all",async (req,res)=>{
         console.log("Calling taskFunc.allTask...");
